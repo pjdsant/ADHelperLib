@@ -9,18 +9,16 @@ namespace ConsoleTest
         {
             ADHelper adhelper = new ADHelper();
 
-            string domain = "domain.com";
-            string container = "DC=domain,DC=com";
-            string admin = "admin";
-            string adminPassword = "adminPassword";
+            string domain = AppSettings.Domain;
+            string container = AppSettings.Container;
+            string admin = AppSettings.Admin;
+            string adminPassword = AppSettings.AdminPassword;
             string userMain = "usermain";
             string attributeOne = "extensionAttribute1";
             string attributeTwo = "extensionAttribute2";
             string respAttributeOne = "resp1";
             string respAttributeTwo = "resp2";
-
-
-
+                       
             var res = "";
 
             var valid = adhelper.ValidateExAttributes(domain, container, admin, adminPassword, userMain, attributeOne, attributeTwo, respAttributeOne, respAttributeTwo);
